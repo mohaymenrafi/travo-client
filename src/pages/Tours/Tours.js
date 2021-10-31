@@ -1,11 +1,10 @@
-import useAuth from '../../hooks/useAuth';
 import useTourPackages from '../../hooks/useTourPackages';
 import PackageCard from './PackageCard/PackageCard';
 import './Tours.css';
 
 const Tours = () => {
-  const [tourPackages, isTourPackagesLoading] = useTourPackages();
-  if (isTourPackagesLoading) {
+  const [tourPackages] = useTourPackages();
+  if (!tourPackages.length) {
     return (
       <div>
         <div className="h-screen w-screen z-50 flex justify-center items-center">

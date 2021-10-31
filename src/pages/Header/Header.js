@@ -12,14 +12,14 @@ const Header = () => {
   const { user, logOut } = useAuth();
   return (
     <div className="header">
-      <div className="pc-header container mx-auto p-4 grid grid-cols-2 lg:grid-cols-3 items-center">
+      <div className="pc-header container mx-auto p-4 grid grid-cols-2 lg:grid-cols-4 items-center">
         <div className="logo flex items-center justify-start">
           <NavLink exact to="/">
             <img src={logo} alt="" width="161" height="57" />
           </NavLink>
         </div>
 
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-3">
           {/* hamburger menu button */}
 
           <div className="lg:hidden flex justify-end">
@@ -57,6 +57,13 @@ const Header = () => {
                 Contact
               </NavLink>
               {user?.displayName || user?.email ? (
+                <NavLink activeClassName="navActive" to="/add-package">
+                  Add A Package
+                </NavLink>
+              ) : (
+                ''
+              )}
+              {user?.displayName || user?.email ? (
                 <UserMenu />
               ) : (
                 <NavLink activeClassName="navActive" to="/login">
@@ -84,6 +91,13 @@ const Header = () => {
           <NavLink activeClassName="navActive" to="/contact">
             Contact
           </NavLink>
+          {user?.displayName || user?.email ? (
+            <NavLink activeClassName="navActive" to="/add-package">
+              Add A Package
+            </NavLink>
+          ) : (
+            ''
+          )}
           {user?.displayName || user?.email ? (
             <UserMenu />
           ) : (

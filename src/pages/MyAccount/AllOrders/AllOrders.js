@@ -1,9 +1,15 @@
-import React from 'react';
-import useAllOrder from '../../../hooks/useAllOrder';
-import OrderCard from '../OrderCard/OrderCard';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import AllOrderCard from './AllOrderCard/AllOrderCard';
 
 const AllOrders = () => {
-  const [orders, setOrders] = useAllOrder();
+  const [orders, setOrders] = useState([]);
+  const [monitorOrders, setMonitorOrders] = useState(true);
+  useEffect(() => {
+    axios
+      .get('https://chilling-barrow-28883.herokuapp.com/orders/')
+      .then((res) => setOrders(res.data));
+  }, [monitorOrders]);
   return (
     <div>
       <h2 className="text-center text-4xl font-semibold font-work">
@@ -11,7 +17,12 @@ const AllOrders = () => {
       </h2>
       <div className="grid grid-cols-1 pt-8 gap-y-6">
         {orders.map((order) => (
-          <OrderCard key={order._id} order={order} />
+          <AllOrderCard
+            key={order._id}
+            allOrder={order}
+            monitorOrders={monitorOrders}
+            setMonitorOrders={setMonitorOrders}
+          />
         ))}
       </div>
     </div>

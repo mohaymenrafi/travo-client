@@ -1,24 +1,22 @@
 import axios from 'axios';
 import React from 'react';
-import useDeleteOrder from '../../../hooks/useDeleteOrder';
-import './OrderCard.css';
+import './MyOrderCard.css';
 /*eslint-disable*/
-const OrderCard = ({order}) => {
+const OrderCard = ({order,setMonitorDelete,monitorDelete}) => {
   const {name, email, phone, date, numberOfTicket, _id,packageName,status  } = order;
   const handleDeleteOrder = (id) => {
-    const confirmation = confirm('are you sure, you want to delete?')
-    console.log(confirmation)
-    if(confirmation){
-      useDeleteOrder(id)
-      alert('The order has been deleted!')
-      window.location.reload(true);
-    }  else{
-      console.info('you did not confirm to delete the order!')
+    const confirmation = confirm('Do you want to delete this order?');
+    /* eslint-enable */
+    if (confirmation) {
+      const url = `https://chilling-barrow-28883.herokuapp.com/orders/${id}`;
+      axios.delete(url).then((res) => {
+        if (res.data.deletedCount) {
+          console.log(res.data.deletedCount);
+          alert('Your order has been deleted');
+          setMonitorDelete(!monitorDelete);
+        }
+      });
     }
-  }
-  /* eslint-enable */
-  const handleStatus = (id) => {
-    console.log(id);
   };
   return (
     <div className="order-card border border-lightGray rounded-xl p-6 text-semiBlack text-xl grid grid-cols-1 lg:grid-cols-3">
@@ -47,24 +45,20 @@ const OrderCard = ({order}) => {
           <span className="font-bold text-paste">Tickets Booked: </span>
           {numberOfTicket}
         </h2>
+      </div>
+      <div className="flex flex-col content-end justify-center">
         <div>
-          <span className="font-bold text-paste">Order Status: </span>
-          <button
-            type="button"
-            className="text-white px-6 py-2 rounded-sm bg-danger"
+          <h2 className="text-center font-work font-semibold text-2xl">
+            Order Status
+          </h2>
+          <h2
+            className={`${
+              status === 'pending' ? 'bg-danger ' : 'bg-paste '
+            }text-center font-work font-semibold text-white p-2 rounded mt-2 capitalize`}
           >
             {status}
-          </button>
+          </h2>
         </div>
-      </div>
-      <div className="flex flex-col content-end">
-        <button
-          type="button"
-          className="default-btn-color mt-6"
-          onClick={() => handleStatus(_id)}
-        >
-          Approve
-        </button>
 
         <button
           className="default-btn-color mt-6"

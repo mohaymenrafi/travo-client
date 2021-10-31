@@ -32,7 +32,9 @@ function App() {
             <PrivateRoute path="/my-account">
               <MyAccount />
             </PrivateRoute>
-            <Route path="/add-package" component={AddAPackage} />
+            <PrivateRoute path="/add-package">
+              <AddAPackage />
+            </PrivateRoute>
             <Route path="*" component={NotFound} />
           </Switch>
           <Footer />

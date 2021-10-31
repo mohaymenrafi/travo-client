@@ -3,14 +3,11 @@ import { useEffect, useState } from 'react';
 
 const useTourPackages = () => {
   const [tourPackages, setTourPackages] = useState([]);
-  const [isTourPackagesLoading, setTourPackagesLoading] = useState(true);
   useEffect(() => {
-    setTourPackagesLoading(true);
     axios
       .get('https://chilling-barrow-28883.herokuapp.com/packages')
-      .then((res) => setTourPackages(res.data))
-      .finally(setTourPackagesLoading(false));
+      .then((res) => setTourPackages(res.data));
   }, []);
-  return [tourPackages, isTourPackagesLoading];
+  return [tourPackages];
 };
 export default useTourPackages;
