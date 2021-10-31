@@ -14,12 +14,12 @@ const AddAPackage = () => {
   };
   return (
     <div className="bg-lightGray px-4 py-16">
-      <h2 className="text-6xl font-work font-bold text-semiBlack text-center">
+      <h2 className="text-5xl md:text-6xl font-work font-bold text-semiBlack text-center">
         Fill in the Details
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="add-form w-6/12 mx-auto bg-paste px-32 py-16"
+        className="add-form md:w-10/12 mx-auto bg-paste px-4 md:px-16 lg:w-7/12 py-16"
       >
         <input type="text" {...register('name')} placeholder="Place Name" />
         <input type="text" {...register('duration')} placeholder="Duration" />

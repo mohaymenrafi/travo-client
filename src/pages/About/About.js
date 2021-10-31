@@ -28,16 +28,22 @@ const About = () => (
     {/* ------popoular tours----- */}
     <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 py-16 items-center">
       <div>
-        <h3 className="font-yester text-5xl text-paste mb-4">Our Most</h3>
-        <h2 className="font-abril text-6xl font-bold mb-4 text-semiBlack">
+        <h3 className="font-yester text-3xl md:text-5xl text-paste mb-4">
+          Our Most
+        </h3>
+        <h2 className="font-abril text-5xl md:text-6xl font-bold mb-4 text-semiBlack">
           Popular Tours
         </h2>
         <p className="text-lg font-work text-semiblack mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          perferendis accusantium labore ducimus veritatis ullam cupiditate
-          aliquid, voluptatem non animi neque tenetur illo! Earum, consectetur
-          vitae ipsum aut quam placeat possimus saepe culpa magni commodi quis!
-          Possimus adipisci id vitae!
+          Travo has come a long way since then, now giving over 100,000
+          travelers a year the opportunity to experience small group travel
+          across all 7 continents. They use local transport, sleep in local
+          accommodation from Cambodian stilt houses to Moroccan riads, and
+          employ 100% local leaders. With three different adventure styles
+          including basix, original and comfort, themes ranging from cycling
+          trips to family holidays, and itineraries crafted with the perfect
+          balance of must-see sights and free time, Travo caters to every type
+          of traveller no matter their age, budget or adventure style.
         </p>
         <Link to="/tours">
           <button type="button" className="default-btn-color mt-8">
@@ -64,8 +70,10 @@ const About = () => (
     <div className="choose-us">
       <div className="container mx-auto px-4 py-32 grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h3 className="font-yester text-5xl text-paste mb-4">Why</h3>
-          <h2 className="font-abril text-6xl font-bold mb-4 text-semiBlack">
+          <h3 className="font-yester text-3xl md:text-5xl text-paste mb-4">
+            Why
+          </h3>
+          <h2 className="font-abril text-5xl md:text-6xl font-bold mb-4 text-semiBlack">
             Choose Us
           </h2>
           <div className="mt-12">

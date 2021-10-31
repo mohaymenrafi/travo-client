@@ -8,9 +8,11 @@ import img6 from '../../../images/bali.png';
 
 const ImageGrid = () => (
   <div>
-    <div className="container mx-auto my-32 px-4">
-      <h3 className="font-yester text-5xl text-paste mb-4">Choose Your</h3>
-      <h2 className="font-abril text-6xl font-bold mb-4 text-semiBlack">
+    <div className="container mx-auto my-24 md:my-32 px-4">
+      <h3 className="font-yester text-3xl md:text-5xl text-paste mb-4">
+        Choose Your
+      </h3>
+      <h2 className="font-abril text-5xl md:text-6xl font-bold mb-4 text-semiBlack">
         Perfect Holiday
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center mt-16">

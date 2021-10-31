@@ -8,10 +8,10 @@ const BestOffers = () => {
   return (
     <div className="bg-lightGray">
       <div className="container mx-auto py-32 px-4">
-        <h3 className="text-center font-yester text-5xl text-paste mb-4">
+        <h3 className="text-center font-yester text-3xl md:text-5xl text-paste mb-4">
           Our Trending
         </h3>
-        <h2 className="text-center font-abril text-6xl font-bold mb-4 text-semiBlack">
+        <h2 className="text-center font-abril text-5xl md:text-6xl font-bold mb-4 text-semiBlack">
           Best Offers
         </h2>
         <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
