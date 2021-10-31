@@ -1,0 +1,18 @@
+.book-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #edf2f7;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+.book-form input {
+  margin: 7px;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 7px;
+}
+.book-form input:not(:last-child) {
+  border: 1px solid #ededed;
+}

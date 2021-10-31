@@ -1,0 +1,6 @@
+.about-header {
+  background: url("../../images/contact-bg.jpg") center no-repeat;
+  background-size: cover;
+  background-color: var(--paste);
+  background-blend-mode: multiply;
+}

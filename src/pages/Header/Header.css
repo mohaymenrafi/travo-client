@@ -1,0 +1,35 @@
+.pc-header .navActive {
+  color: var(--orange);
+}
+.pc-header .navActive::after,
+.pc-header nav a:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid var(--orange);
+  bottom: -7px;
+  left: 0;
+}
+.pc-header nav a {
+  font-family: "Work Sans", sans-serif;
+  margin-left: 1.5rem;
+  color: var(--black2e);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.pc-header nav a:hover {
+  color: var(--orange);
+}
+
+/* mobile nav  */
+.mobile-nav {
+  transition: all 0.3s ease;
+}
+.mobile-nav nav a {
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  margin: 10px auto;
+}
